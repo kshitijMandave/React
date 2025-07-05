@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <title>Document</title>
+    <style>
+        #container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #card {
+            align-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        function createCard() {
+            let img = React.createElement("img", { src: "https://i.pinimg.com/originals/07/33/ba/0733ba760b29378474dea0fdbcb97107.png", style: { height: "250px", } });
+            let h3 = React.createElement("h3", null, "Ramya K");
+            let card = React.createElement("div", { id: "card", style: { width: "300px", height: "500px", border: "2px solid black" } }, [img, h3]);
+
+            return card;
+        }
+
+        function createContainer() {
+            let container = React.createElement("div", { id: "container" }, [createCard(), createCard(), createCard(), createCard()]);
+            return container;
+        }
+
+        ReactDOM.render(createContainer(), document.getElementById("root"));
+
+    </script>
+
+</body>
+
+</html>

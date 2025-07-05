@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <title>Document</title>
+    <style>
+        #container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #card {
+            align-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        function createCard(src, name) {
+            let img = React.createElement("img", { src, style: { height: "250px", } });
+            let h3 = React.createElement("h3", null, name);
+            let card = React.createElement("div", { id: "card", style: { width: "300px", height: "500px", border: "2px solid black" } }, [img, h3]);
+
+            return card;
+        }
+
+        function createContainer() {
+            let container = React.createElement("div", { id: "container" }, [createCard("https://th.bing.com/th/id/OIP.KdBSw8TPL34eU6T7bjhpAAHaLH?rs=1&pid=ImgDetMain", "Kshitij"), createCard("https://www.rcmalternatives.com/wp-content/uploads/2018/01/JakeBax_1024-500x500.jpg", "Shubham"), createCard("https://th.bing.com/th/id/OIP.eD9FTcj5Qg4GAReHnMilEAHaHa?w=1200&h=1200&rs=1&pid=ImgDetMain", "Krish"), createCard("https://oc-static.poweredbyproctors.co.uk/public/lawyer_images/enno.dreier.png?VersionId=AvSLBb4fBvMFeLvRq1hZBcBoXJvRwyq1", "Devdatta")]);
+            return container;
+        }
+
+        ReactDOM.render(createContainer(), document.getElementById("root"));
+
+    </script>
+
+</body>
+
+</html>

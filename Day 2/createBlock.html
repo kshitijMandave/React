@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        #card {
+            align-items: center;
+            margin: 10px;
+            display: flex;
+            width: 94%;
+
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+
+        #content-section {
+            padding: 25px;
+        }
+
+        p {
+            text-align: justify;
+        }
+    </style>
+    <title>create Section</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        function createImgSec(src) {
+            let img = React.createElement("img", { src, id: "card-image", style: { width: "300px" } });
+            let imgSec = React.createElement("div", { id: "img-section" }, img); // Fix: use `img` as child
+            return imgSec;
+        }
+
+        function createCardContent(contHeading, contPara) {
+            let h3 = React.createElement("h3", {}, contHeading);
+            let p = React.createElement("p", {}, contPara);
+
+            let contentSec = React.createElement("div", { id: "content-section" }, [h3, p]);
+
+            return contentSec;
+        }
+
+        function createCard() {
+            let card = React.createElement("div", { id: "card", style: { border: "2px solid black", padding: "25px" } }, [
+                createCardContent("HTML", "HTML, or HyperText Markup Language is the standard markup language used to create web pages. It is a combination of Hypertext and Markup language. The Hypertext defines the link between web pages, and Markup defines the text document within tags to structure the web pages. This language annotates text so that machines can understand and manipulate it accordingly. HTML is human-readable and uses tags to define what manipulation has to be done on the text. This guide will help you understand and explain the workings of HTML with examples."),
+                createImgSec("https://clipartcraft.com/images/html5-logo-circle-3.png")
+            ]);
+            return card;
+        }
+        function createCSSCard() {
+            let card = React.createElement("div", { id: "card", style: { border: "2px solid black", padding: "25px" } }, [
+                createCardContent("CSS", "CSS (Cascading Style Sheets) is a language designed to simplify the process of making web pages presentable. It allows you to apply styles to HTML documents, describing how a webpage should look by prescribing colors, fonts, spacing, and positioning. CSS provides developers and designers with powerful control over the presentation of HTML elements. HTML uses tags and CSS uses rulesets. CSS styles are applied to the HTML element using selectors. CSS is easy to learn and understand, but it provides powerful control over the presentation of an HTML document."),
+                createImgSec("https://i.pinimg.com/736x/fa/ae/11/faae11a6b87547339411b40ac228d4d7.jpg")
+            ]);
+            return card;
+        }
+        function createJSCard() {
+            let card = React.createElement("div", { id: "card", style: { border: "2px solid black", padding: "25px" } }, [
+                createCardContent("Java Script", "CSS (Cascading Style Sheets) is a language deJavaScript is a lightweight, cross-platform, single-threaded, and interpreted compiled programming language. It is also known as the scripting language for webpages. It is well-known for the development of web pages, and many non-browser environments also use it. JavaScript is a weakly typed language (dynamically typed). JavaScript can be used for Client-side developments as well as Server-side developments. JavaScript is both an imperative and declarative type of language. JavaScript contains a standard library of objects, like Array, Date, and Math, and a core set of language elements like operators, control structures, and statements.signed to simplify the process of making web pages presentable. It allows you to apply styles to HTML documents, describing how a webpage should look by prescribing colors, fonts, spacing, and positioning. CSS provides developers and designers with powerful control over the presentation of HTML elements. HTML uses tags and CSS uses rulesets. CSS styles are applied to the HTML element using selectors. CSS is easy to learn and understand, but it provides powerful control over the presentation of an HTML document."),
+                createImgSec("https://www.freepnglogos.com/uploads/javascript-png/png-javascript-badge-picture-8.png")
+            ]);
+            return card;
+        }
+
+        function createContainer() {
+            let container = React.createElement("div", { id: "container" }, [createCard(), createCSSCard(), createJSCard()]);
+            return container;
+        }
+
+        ReactDOM.render(createContainer(), document.getElementById("root"))
+
+        // const root = ReactDOM.createRoot(document.getElementById("root")); // Use ReactDOM.createRoot
+        // root.render(createContainer()); // Use the `render` method of the root
+
+    </script>
+
+</body>
+
+</html>
