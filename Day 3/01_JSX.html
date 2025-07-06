@@ -1,0 +1,42 @@
+<!--
+
+JSX
+-----
+it is a one of the way of writing HTML-like code into JavaScript
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function createCard() {
+            return (
+                <div>
+                    <img src="https://th.bing.com/th/id/R.0350b03b943792ab903d5784f72e165a?rik=snn4MpMRfubOxQ&riu=http%3a%2f%2fthispix.com%2fwp-content%2fuploads%2f2015%2f06%2fCopy-of-Edit-1798-1.jpg&ehk=23l8%2fpxrSUrkJ253xntAyozTzmtcMYBtQvc5KHnLk8s%3d&risl=&pid=ImgRaw&r=0" width="200px" height="350px" alt="photo" img />
+                    <h2>Ramya Rajput</h2>
+                </div>
+            )
+        }
+
+        ReactDOM.render(createCard(), document.getElementById("root"));
+    </script>
+</body>
+
+</html>
